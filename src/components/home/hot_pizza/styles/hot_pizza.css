@@ -1,0 +1,35 @@
+.hot_pizza h3 {
+    text-align: center;
+    font-weight: 700;
+}
+
+.hot_pizza .pro_hot_pizza .pro {
+    border: 1px solid #fd202025;
+    text-align: center;
+}
+
+.hot_pizza .pro_hot_pizza .pro img {}
+
+.hot_pizza .pro_hot_pizza .pro img {
+    width: 110px;
+}
+
+.hot_pizza .pro_hot_pizza .pro h5 {
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+.hot_pizza .pro_hot_pizza .pro .price_btn {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hot_pizza .pro_hot_pizza .pro .price_btn p {
+    margin: 0;
+    color: #FD2020;
+}
+
+.hot_pizza .pro_hot_pizza .pro .price_btn button {
+    font-size: 14px;
+    background-color: #FD2020;
+}

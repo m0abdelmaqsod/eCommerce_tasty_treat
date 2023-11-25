@@ -1,0 +1,85 @@
+.our_services {
+    margin-top: 15vh;
+}
+
+.our_services .all_category .category {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #fde4e4;
+    padding: 20px 10px;
+    transition: all 0.5s;
+}
+
+.our_services .all_category .category img {
+    width: 60px;
+    margin-right: 10px;
+}
+
+.our_services .all_category .category p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.our_services .all_category .category:hover {
+    transform: translateY(-40px);
+}
+
+
+
+
+
+
+.our_services .what_we_serve {
+    margin: 20vh auto 0;
+}
+
+.our_services .what_we_serve h3 {
+    width: 60%;
+    margin: auto;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+.our_services .what_we_serve h3 span {
+    color: crimson;
+}
+
+.our_services .what_we_serve p {
+    font-size: 14px;
+    color: #888;
+    margin: 8px;
+}
+
+.our_services .what_we_serve {}
+
+
+
+
+
+
+
+
+
+
+
+
+.our_services .features .div_features {
+    text-align: center;
+    margin-top: 10vh;
+}
+
+.our_services .features .div_features img {
+    width: 20%;
+    margin: 0 0 20px 0;
+}
+
+.our_services .features .div_features h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.our_services .features .div_features p {
+    font-size: 13px;
+    color: #888;
+}

@@ -1,0 +1,95 @@
+{
+    "allProduct": [
+        {
+            "id": 1,
+            "namePro": "Chicken Burger",
+            "imgUrl": "../images/product_01.jpg",
+            "category": "burger",
+            "price": 24
+        },
+        {
+            "id": 2,
+            "namePro": "Vegetarian Pizza",
+            "imgUrl": "../images/product_2.1.jpg",
+            "category": "pizza",
+            "price": 115
+        },
+        {
+            "id": 3,
+            "namePro": "Double Cheese Margherita",
+            "imgUrl": "../images/product_3.1.jpg",
+            "category": "pizza",
+            "price": 110
+        },
+        {
+            "id": 4,
+            "namePro": "Mexican Green Wave",
+            "imgUrl": "../images/product_4.1.jpg",
+            "category": "pizza",
+            "price": 110
+        },
+        {
+            "id": 5,
+            "namePro": "Cheese Burger",
+            "imgUrl": "../images/product_04.jpg",
+            "category": "burger",
+            "price": 24
+        },
+        {
+            "id": 6,
+            "namePro": "Royal Cheese Burger",
+            "imgUrl": "../images/product_01.3.jpg",
+            "category": "burger",
+            "price": 24
+        },
+        {
+            "id": 7,
+            "namePro": "Seafood Pizza",
+            "imgUrl": "../images/product_2.2.jpg",
+            "category": "pizza",
+            "price": 115
+        },
+        {
+            "id": 8,
+            "namePro": "Thin Cheese Pizza",
+            "imgUrl": "../images/product_3.2.jpg",
+            "category": "pizza",
+            "price": 110
+        },
+        {
+            "id": 9,
+            "namePro": "Pizza With Mushroom",
+            "imgUrl": "../images/product_4.2.jpg",
+            "category": "pizza",
+            "price": 110
+        },
+        {
+            "id": 10,
+            "namePro": "Classic Hamburger",
+            "imgUrl": "../images/product_08.jpg",
+            "category": "burger",
+            "price": 24
+        },
+        {
+            "id": 11,
+            "namePro": "Crunchy Bread",
+            "imgUrl": "../images/bread(1).jpg",
+            "category": "bread",
+            "price": 35
+        },
+        {
+            "id": 12,
+            "namePro": "Delicious Bread",
+            "imgUrl": "../images/bread(2).jpg",
+            "category": "bread",
+            "price": 35
+        },
+        {
+            "id": 13,
+            "namePro": "loaf Bread",
+            "imgUrl": "../images/bread(3).jpg",
+            "category": "bread",
+            "price": 35
+        }
+    ]
+}

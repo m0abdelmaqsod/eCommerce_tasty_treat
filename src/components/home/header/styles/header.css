@@ -1,0 +1,45 @@
+.header {
+    padding-top: 8vh;
+}
+
+.header_info h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.header_info h1 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.header_info h1 span {
+    color: crimson;
+}
+
+.header_info h5 {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    color: #888;
+}
+
+.header_info h5 span {
+    width: 25px;
+    height: 25px;
+    font-size: 13px;
+    border-radius: 50%;
+    background-color: crimson;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-right: 8px;
+}
+
+.header_info p {
+    color: #888;
+    word-spacing: 3px;
+    line-height: 27px;
+    font-size: 13px;
+    font-weight: 100;
+}

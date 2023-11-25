@@ -1,0 +1,59 @@
+.navbar {
+    background-color: #fcfcfc;
+}
+
+.navbar .logo_nav {
+    width: 100px;
+}
+
+.navbar .logo_nav a img {
+    width: 45%;
+}
+
+.navbar .logo_nav a h3 {
+    font-size: 16px;
+}
+
+
+
+
+
+.navbar .link_nav ul li {
+    margin: 0 20px;
+}
+
+.navbar .link_nav ul li a{
+    font-size: 13px;
+}
+
+.navbar .link_nav ul li .activeLinkNav {
+    color: crimson;
+    font-weight: 600;
+    transition: all 0.5s;
+}
+
+
+
+
+
+
+.navbar .div_icons_navbar {
+    width: 55px;
+    justify-content: space-between;
+}
+
+.navbar .div_icons_navbar .icon_cart button {
+    position: relative;
+}
+
+.navbar .div_icons_navbar .icon_cart button span {
+    background-color: crimson;
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    width: 16px;
+    height: 16px;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}

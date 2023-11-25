@@ -1,0 +1,73 @@
+.fil_popular_foods {
+    margin-top: 20vh;
+}
+
+.fil_popular_foods h3 {
+    font-weight: 800;
+    margin-bottom: 5vh;
+}
+
+.fil_popular_foods .navbar_filter_popular {
+    background-color: #df2020;
+    border-radius: 8px;
+}
+
+.fil_popular_foods .navbar_filter_popular ul {
+    justify-content: space-between;
+    width: 40%;
+}
+
+.fil_popular_foods .navbar_filter_popular ul li button {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.fil_popular_foods .navbar_filter_popular ul li button.activeNavFilter {
+    color: #df2020;
+    background-color: #fff;
+}
+
+.fil_popular_foods .navbar_filter_popular ul li button img {
+    width: 20px;
+    margin-right: 8px;
+}
+
+
+
+
+
+
+
+
+.fil_popular_foods .all_pro_popular .pro {
+    border: 1px solid #fd202025;
+    text-align: center;
+}
+
+.fil_popular_foods .all_pro_popular .pro img {
+    width: 110px;
+}
+
+.fil_popular_foods .all_pro_popular .pro h5 {
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+.fil_popular_foods .all_pro_popular .pro .price_btn {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fil_popular_foods .all_pro_popular .pro .price_btn p {
+    margin: 0;
+    color: #FD2020;
+}
+
+.fil_popular_foods .all_pro_popular .pro .price_btn button {
+    font-size: 14px;
+    background-color: #FD2020;
+}
