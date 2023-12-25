@@ -14,14 +14,14 @@ const Why_tasty_treat = () => {
                     <Row>
                         {/* ===== start of img why tasty treat ===== */}
 
-                        <Col>
+                        <Col sm="12" md="6" lg="6" xl="6">
                             <div className="img_why_tasty_treat">
-                                <img className='w-100' src={require('../../../assets/images/location.png')} alt="" />
+                                <img src={require('../../../assets/images/location.png')} alt="" />
                             </div>
                         </Col>
 
                         {/* ===== start of div why tasty treat ===== */}
-                        <Col>
+                        <Col sm="12" md="6" lg="6" xl="6">
                             <div className="div_why_tasty_treat">
                                 <h3 className='mb-3'>why <span>Tasty Treat?</span></h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia cupiditate nemo omnis hic enim dolorem. Sequi non impedit nemo minima quibusdam. Quasi velit beatae vitae quidem consequuntur, quae temporibus dolor!</p>

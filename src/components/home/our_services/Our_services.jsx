@@ -8,28 +8,28 @@ const Our_services = () => {
                 <Container>
                     <div className="all_category">
                         <Row>
-                            <Col>
+                            <Col sm="6" md="6" lg="3" xl="3">
                                 <div className="category ">
                                     <img src={require('../../../assets/images/category-01.png')} alt="" />
                                     <p>Fast Food</p>
                                 </div>
                             </Col>
 
-                            <Col>
+                            <Col sm="6" md="6" lg="3" xl="3">
                                 <div className="category ">
                                     <img src={require('../../../assets/images/category-02.png')} alt="" />
                                     <p>pizza</p>
                                 </div>
                             </Col>
 
-                            <Col>
+                            <Col sm="6" md="6" lg="3" xl="3">
                                 <div className="category ">
                                     <img src={require('../../../assets/images/category-03.png')} alt="" />
                                     <p>Asian Food</p>
                                 </div>
                             </Col>
 
-                            <Col>
+                            <Col sm="6" md="6" lg="3" xl="3">
                                 <div className="category ">
                                     <img src={require('../../../assets/images/category-04.png')} alt="" />
                                     <p>Row Meat</p>
@@ -39,7 +39,7 @@ const Our_services = () => {
                     </div>
 
 
-                    <div className="what_we_serve text-center w-50">
+                    <div className="what_we_serve text-center">
                         <h5 className='mb-3 text-danger'>what we serve</h5>
                         <h3>just sit back at home we will <span>tack care</span></h3>
                         <p className='mt-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, sed.</p>
@@ -48,8 +48,8 @@ const Our_services = () => {
 
 
                     <div className="features">
-                        <Row className='gap-5'>
-                            <Col>
+                        <Row className='row_features'>
+                            <Col sm="6" md="6" lg="4" xl="4">
                                 <div className="div_features">
                                     <img src={require('../../../assets/images/service-01.png')} alt="" />
                                     <h3>Quick delivery</h3>
@@ -57,7 +57,7 @@ const Our_services = () => {
                                 </div>
                             </Col>
 
-                            <Col>
+                            <Col sm="6" md="6" lg="4" xl="4">
                                 <div className="div_features">
                                     <img src={require('../../../assets/images/service-02.png')} alt="" />
                                     <h3>Super dine in</h3>
@@ -65,7 +65,7 @@ const Our_services = () => {
                                 </div>
                             </Col>
 
-                            <Col>
+                            <Col sm="6" md="6" lg="4" xl="4">
                                 <div className="div_features">
                                     <img src={require('../../../assets/images/service-03.png')} alt="" />
                                     <h3>Easy pick up</h3>

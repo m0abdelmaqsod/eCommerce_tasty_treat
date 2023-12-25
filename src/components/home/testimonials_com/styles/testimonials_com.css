@@ -20,8 +20,8 @@
 }
 
 
-.testimonials_com .div_swiper {
-    width: 100%;
+.testimonials_com .div_swiper .mySwiper {
+    z-index: 0;
 }
 
 .testimonials_com .div_swiper .mySwiper .com p {
@@ -50,4 +50,107 @@
 
 .testimonials_com .div_img img {
     width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === Responsive === */
+@media (max-width:360px) {
+    .testimonials_com {
+        margin-top: 8vh;
+    }
+
+    .testimonials_com h2 {
+        font-size: 25px;
+    }
+
+    .testimonials_com .div_swiper .mySwiper .com p {
+        font-size: 13px;
+    }
+}
+
+
+
+
+
+@media (min-width:360px) {
+    .testimonials_com {
+        margin-top: 8vh;
+    }
+
+    .testimonials_com h2 {
+        font-size: 25px;
+    }
+
+    .testimonials_com .div_swiper .mySwiper .com p {
+        font-size: 13px;
+    }
+}
+
+
+
+
+
+@media (min-width:768px) {
+    .testimonials_com h3 {
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+@media (min-width:860px) {
+    .testimonials_com h3 {
+        font-size: 17px;
+    }
+
+    .testimonials_com .div_swiper .mySwiper .com p {
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+@media (min-width:1024px) {
+    .testimonials_com {
+        margin-top: 10vh;
+    }
+
+    .testimonials_com h2 {
+        font-size: 28px;
+    }
+}
+
+
+
+
+
+@media (min-width:1200px) {
+    .testimonials_com {
+        margin-top: 15vh;
+    }
+
+    .testimonials_com h2 {
+        font-size: 30px;
+    }
 }
