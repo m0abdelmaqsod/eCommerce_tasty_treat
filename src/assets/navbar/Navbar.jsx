@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/navbar.css'
 import { FaRegUser, FaBasketShopping } from "react-icons/fa6";
-import { Container, Row, Col } from 'react-bootstrap';
+import { CgMenuRight } from "react-icons/cg";
+import { Container, Button } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
+import SidebarCart from '../sidebarCart/SidebarCart';
+
+
+
 
 
 const Navbar = () => {
+    const [openSidebarCart, setOpenSidebarCart] = useState(false);
+
+    const [openSidebarLink, setOpenSidebarLink] = useState(false);
+
+
+    // console.log(openSidebarLink);
+
+
+
     return (
         <>
             <nav className='navbar py-2'>
@@ -21,22 +35,25 @@ const Navbar = () => {
 
 
 
-                    <div className="link_nav">
-                        <ul className='d-flex'>
+                    <div>
+                        <ul className={openSidebarLink === false ? "close-link link_nav" : "link_nav"}>
+
+                            <Button onClick={() => setOpenSidebarLink(false)} className='btn_close m-4 rounded-5 p-0' variant="dark">X</Button>
+
                             <li>
-                                <NavLink className={({ isActive }) => isActive ? "activeLinkNav" : ""} to='/'>Home</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? "activeLinkNav" : ""} onClick={() => setOpenSidebarLink(false)} to='/'>Home</NavLink>
                             </li>
 
                             <li>
-                                <NavLink className={({ isActive }) => isActive ? "activeLinkNav" : ""} to='/Foods'>Foods</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? "activeLinkNav" : ""} onClick={() => setOpenSidebarLink(false)} to='/Foods'>Foods</NavLink>
                             </li>
 
                             <li>
-                                <NavLink className={({ isActive }) => isActive ? "activeLinkNav" : ""} to='/Cart'>Cart</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? "activeLinkNav" : ""} onClick={() => setOpenSidebarLink(false)} to='/Cart'>Cart</NavLink>
                             </li>
 
                             <li>
-                                <NavLink className={({ isActive }) => isActive ? "activeLinkNav" : ""} to='/Contact'>Contact</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? "activeLinkNav" : ""} onClick={() => setOpenSidebarLink(false)} to='/Contact'>Contact</NavLink>
                             </li>
                         </ul>
                     </div>
@@ -46,18 +63,28 @@ const Navbar = () => {
 
                     <div className="div_icons_navbar d-flex ">
                         <div className="icon_cart">
-                            <button>
+                            <button onClick={() => setOpenSidebarCart(true)}>
                                 <FaBasketShopping />
                                 <span className='d-flex rounded-5 text-light'>2</span>
                             </button>
                         </div>
 
                         <div className="icon_user">
-                            <button>
-                                <FaRegUser />
-                            </button>
+                            <Link to='/Login'>
+                                <button>
+                                    <FaRegUser />
+                                </button>
+                            </Link>
+                        </div>
+
+                        <div className="btn_toggle_link">
+                            <CgMenuRight onClick={() => setOpenSidebarLink(true)} />
                         </div>
                     </div>
+
+                    <SidebarCart setOpenSidebarCart={setOpenSidebarCart} openSidebarCart={openSidebarCart} />
+
+
                 </Container >
             </nav>
         </>

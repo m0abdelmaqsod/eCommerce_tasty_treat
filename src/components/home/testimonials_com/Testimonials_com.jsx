@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/testimonials_com.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Container, Row, Col } from 'react-bootstrap';
+
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -20,10 +21,12 @@ const Testimonials_com = () => {
         <>
             <div className="testimonials_com">
                 <Container>
-                    <h3>Testimonials</h3>
-                    <h2>What our <span>customer</span> are saying</h2>
                     <Row>
-                        <Col className='w-50'>
+                        <Col sm="12" md="6" lg="6" xl="6">
+
+                            <h3>Testimonials</h3>
+                            <h2>What our <span>customer</span> are saying</h2>
+
                             <div className="div_swiper">
                                 <Swiper
                                     pagination={{
@@ -81,7 +84,7 @@ const Testimonials_com = () => {
                         </Col>
 
 
-                        <Col>
+                        <Col sm="12" md="6" lg="6" xl="6">
                             <div className="div_img">
                                 <img src={require('../../../assets/images/network.png')} alt="" />
                             </div>

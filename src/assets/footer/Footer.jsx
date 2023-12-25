@@ -9,8 +9,8 @@ const Footer = () => {
         <>
             <footer className='footer'>
                 <Container>
-                    <Row>
-                        <Col>
+                    <Row >
+                        <Col className='mb-5' xl="3" lg="4" md="6" sm="12">
                             <div className="logo_footer">
                                 <Link to='/'>
                                     <img src={require('../images/res-logo.png')} alt="" />
@@ -22,7 +22,7 @@ const Footer = () => {
                             </div>
                         </Col>
 
-                        <Col>
+                        <Col className='mb-5' xl="3" lg="4" md="6" sm="12">
                             <div className="delivery_time">
                                 <h3>Delivery time</h3>
                                 <div className="mt-3">
@@ -37,7 +37,7 @@ const Footer = () => {
                             </div>
                         </Col>
 
-                        <Col>
+                        <Col className='mb-5' xl="3" lg="4" md="6" sm="12">
                             <div className="contact">
                                 <h3>Contact</h3>
                                 <div className="mt-3">
@@ -48,13 +48,13 @@ const Footer = () => {
                             </div>
                         </Col>
 
-                        <Col>
+                        <Col className='mb-5' xl="3" lg="4" md="6" sm="12">
                             <div className="newsletter">
                                 <h3>Newsletter</h3>
                                 <form action="">
                                     <label htmlFor="email">subscribe our newsletter</label>
                                     <div className="btn_input d-flex p-1 pe-3 mt-3">
-                                        <input type="email" id='email' placeholder='Enter Email' />
+                                        <input type="email" id='emailFooter' placeholder='Enter Email' />
                                         <Button variant="dark"><RiSendPlaneLine /></Button>
                                     </div>
                                 </form>
