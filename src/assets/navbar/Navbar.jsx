@@ -5,8 +5,7 @@ import { CgMenuRight } from "react-icons/cg";
 import { Container, Button } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import SidebarCart from '../sidebarCart/SidebarCart';
-
-
+import { useSelector } from 'react-redux';
 
 
 
@@ -15,9 +14,8 @@ const Navbar = () => {
 
     const [openSidebarLink, setOpenSidebarLink] = useState(false);
 
-
-    // console.log(openSidebarLink);
-
+    
+    const totalQuantity = useSelector(store => store.cart.totalQuantity)
 
 
     return (
@@ -65,7 +63,7 @@ const Navbar = () => {
                         <div className="icon_cart">
                             <button onClick={() => setOpenSidebarCart(true)}>
                                 <FaBasketShopping />
-                                <span className='d-flex rounded-5 text-light'>2</span>
+                                <span className='d-flex rounded-5 text-light'>{totalQuantity}</span>
                             </button>
                         </div>
 

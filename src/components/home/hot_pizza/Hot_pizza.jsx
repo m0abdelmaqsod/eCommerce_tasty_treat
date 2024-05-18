@@ -2,11 +2,12 @@ import React from 'react';
 import './styles/hot_pizza.css';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../../../store/shopping-cart/cartSlice';
 
 const Hot_pizza = (handelHotPizza) => {
     const data = handelHotPizza.handelHotPizza;
-    // console.log(data);
+    const dispatch = useDispatch()
 
     return (
         <>
@@ -26,7 +27,7 @@ const Hot_pizza = (handelHotPizza) => {
 
                                             <div className="price_btn d-flex">
                                                 <p>${product.price}</p>
-                                                <Button variant="danger">Add To Cart</Button>
+                                                <Button variant="danger" onClick={() => dispatch(cartActions.addItem(product))}>Add To Cart</Button>
                                             </div>
                                         </div>
                                     </Col>

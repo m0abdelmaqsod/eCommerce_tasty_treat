@@ -1,27 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import './styles/foods.css'
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import axios from 'axios';
 import { FiSearch } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
-
-
+import { useDispatch, useSelector } from 'react-redux';
+import { cartActions } from '../../store/shopping-cart/cartSlice';
+import { fetchProduct } from '../../store/products/apiPro';
 
 
 
 
 const Foods = () => {
     document.title = "All Foods";
-    const [data, setData] = useState([]);
+
+    const dispatch = useDispatch();
+
+    // ===== set all data products ===== //
+    const { products } = useSelector(state => state.pro);
+
 
 
     useEffect(() => {
-        axios.get('http://localhost:8000/allProduct')
-            .then((res) => setData(res.data))
-            .catch((error) => console.log(error))
+        window.scrollTo(0, 0);
+        dispatch(fetchProduct());
     }, [])
-
 
     // ====== start of handel state search ====== //
     const [search, setSearch] = useState("");
@@ -31,9 +34,10 @@ const Foods = () => {
         setSearch(e.target.value);
     }
 
-    const clone = [...data];
+    const clone = [...products];
     const filterSer = clone.filter((item) => search.toLowerCase() === '' ? item : item.namePro.toLowerCase().includes(search))
 
+    // console.log(filterSer);
 
     // ====== start of handel state filter sortItem price ====== //
     const [sortItem, setSortItem] = useState("default");
@@ -61,6 +65,9 @@ const Foods = () => {
     for (let i = 1; i <= pages; i++) {
         generatedPages.push(i);
     }
+
+
+
 
 
     return (
@@ -118,7 +125,7 @@ const Foods = () => {
 
                                                 <div className="price_btn d-flex">
                                                     <p>${product.price}</p>
-                                                    <Button variant="danger">Add To Cart</Button>
+                                                    <Button variant="danger" onClick={() => dispatch(cartActions.addItem(product))}>Add To Cart</Button>
                                                 </div>
                                             </div>
                                         </Col>
@@ -136,10 +143,14 @@ const Foods = () => {
                 {/* ====== start of pagination ===== */}
                 <Container>
                     <div className="pagination d-flex">
-                        <div className="btn_prev">
+                        <div className="btn_pag">
                             <button
+                            className={currentPage === 1 ? "disabled" : ""}
                                 disabled={currentPage === 1}
-                                onClick={() => setCurrentPage((prev) => prev - 1)}
+                                onClick={() => {
+                                    setCurrentPage((prev) => prev - 1);
+                                    window.scrollTo(0, 0);
+                                }}
                             >
                                 <FiArrowLeft />
                             </button>
@@ -148,17 +159,25 @@ const Foods = () => {
                         <div className="btn_num d-flex">
                             {
                                 generatedPages.map((page) =>
-                                    <button className={currentPage === page ? "activeBtnNum" : ""} onClick={() => setCurrentPage(page)} key={page}>
+                                    <button className={currentPage === page ? "activeBtnNum" : ""}
+                                        onClick={() => {
+                                            setCurrentPage(page);
+                                            window.scrollTo(0, 0);
+                                        }} key={page}>
                                         {page}
                                     </button>
                                 )
                             }
                         </div>
 
-                        <div className="btn_next">
+                        <div className="btn_pag">
                             <button
+                                className={currentPage === pages ? "disabled" : ""}
                                 disabled={currentPage === pages}
-                                onClick={() => setCurrentPage((prev) => prev + 1)}
+                                onClick={() => {
+                                    setCurrentPage((prev) => prev + 1)
+                                    window.scrollTo(0, 0);
+                                }}
                             >
                                 <FiArrowRight />
                             </button>

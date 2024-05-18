@@ -1,6 +1,5 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
 import Navbar from '../assets/navbar/Navbar';
 import Home from './home/Home';
 import Single_pro from './single_product/Single_pro';
@@ -11,6 +10,7 @@ import NotFound from './notFound/NotFound';
 import Footer from '../assets/footer/Footer';
 import Signup from './create_an_account/signup/Signup';
 import Login from './create_an_account/login/Login';
+import { ToastContainer } from 'react-toastify';
 
 
 

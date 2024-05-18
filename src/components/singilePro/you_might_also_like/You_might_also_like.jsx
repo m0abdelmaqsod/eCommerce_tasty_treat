@@ -3,17 +3,16 @@ import './styles/you_might_also_like.css';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../../../store/shopping-cart/cartSlice';
 
 
 
 
-const You_might_also_like = (categoryPro) => {
+const You_might_also_like = ({ categoryPro }) => {
 
     // ===== handel data ==== //
     const [data, setData] = useState([]);
-
-    // ===== handel pro category -->  ==== //
-    const categoryProData = categoryPro.categoryPro.category;
 
 
     useEffect(() => {
@@ -25,7 +24,7 @@ const You_might_also_like = (categoryPro) => {
 
 
     // ===== handel filter Data Similar --> category ==== //
-    const filterData = data.filter((pro) => pro.category === categoryProData)
+    const filterData = data.filter((pro) => pro.category === categoryPro.category)
 
 
 
@@ -38,6 +37,7 @@ const You_might_also_like = (categoryPro) => {
     const handelData = data_pro_other.slice(0, 4);
 
 
+    const dispatch = useDispatch();
 
     return (
         <>
@@ -60,7 +60,7 @@ const You_might_also_like = (categoryPro) => {
 
                                             <div className="price_btn d-flex">
                                                 <p>${product.price}</p>
-                                                <Button variant="danger">Add To Cart</Button>
+                                                <Button variant="danger" onClick={() => dispatch(cartActions.addItem(product))}>Add To Cart</Button>
                                             </div>
                                         </div>
                                     </Col>
@@ -93,7 +93,7 @@ const You_might_also_like = (categoryPro) => {
 
                                             <div className="price_btn d-flex">
                                                 <p>${product.price}</p>
-                                                <Button variant="danger">Add To Cart</Button>
+                                                <Button variant="danger" onClick={()=> dispatch(cartActions.addItem(product))}>Add To Cart</Button>
                                             </div>
                                         </div>
                                     </Col>

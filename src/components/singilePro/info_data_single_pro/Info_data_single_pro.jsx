@@ -7,18 +7,17 @@ import { BsExclamationCircleFill } from "react-icons/bs";
 import axios from 'axios';
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useDispatch, useSelector } from 'react-redux';
+import { getReviews } from '../../../store/products/apiPro';
 
-
-
-const Info_data_single_pro = (dataPro) => {
+const Info_data_single_pro = ({ dataPro }) => {
+    const dispatch = useDispatch();
     // ======= handel get data ====== //
-    const [data, setData] = useState([]);
+    const { reviewUser } = useSelector(state => state.pro);
+
 
     // ======= handel active nav info ====== //
     const [activeNavInfo, setActiveNavInfo] = useState("review");
-
-    // ======= handel data product --> name Pro ====== //
-    const dataProName = dataPro.dataPro.namePro;
 
     // ======= handel Submit btn star & form reviews  ====== //
     const handleStar = (e) => {
@@ -33,7 +32,7 @@ const Info_data_single_pro = (dataPro) => {
     const [emailUser, setEmailUser] = useState("");
     const [review, setReview] = useState("");
     const [imgUser, setImgUser] = useState("");
-    const nameProReview = dataProName;
+    const nameProReview = dataPro.namePro;
     const [accept, setAccept] = useState(false);
 
 
@@ -71,14 +70,14 @@ const Info_data_single_pro = (dataPro) => {
 
     // ======= start handel axios get data ======= //
     useEffect(() => {
-        axios.get('http://localhost:8000/reviewUser')
-            .then((res) => setData(res.data))
-            .catch((error) => console.log(error))
+        dispatch(getReviews())
     }, []);
 
 
+
+
     // ======= handel filter reviews  ====== //
-    const filterPro = data.filter((product) => product.nameProReview === dataProName);
+    const filterPro = reviewUser.filter((product) => product.nameProReview === dataPro.namePro);
 
 
     // ======= handel length data reviews ====== //
@@ -267,9 +266,6 @@ const Info_data_single_pro = (dataPro) => {
                                 </div>
                         }
                     </div>
-
-
-
                 </Container >
             </div >
         </>
