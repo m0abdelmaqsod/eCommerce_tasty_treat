@@ -41,6 +41,12 @@
     position: relative;
 }
 
+.sidebarCart .allCart .no_pro{
+    text-align: center;
+    padding-bottom: 5vh;
+    border-bottom: 1px solid #ffc7c7;
+}
+
 .sidebarCart .allCart::-webkit-scrollbar {
     width: 0;
     height: 0;

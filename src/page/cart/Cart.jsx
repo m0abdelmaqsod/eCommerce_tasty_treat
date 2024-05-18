@@ -1,17 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import './styles/cart.css';
-import { Container, Row, Col, Button } from 'react-bootstrap';
-import { RiDeleteBinLine } from "react-icons/ri";
+import { Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
-
-
+import { useDispatch, useSelector } from 'react-redux';
+import CartPro from '../../components/cart/cartProducts/CartPro';
 
 
 const Cart = () => {
-    const [data, setData] = useState([])
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
+    const dispatch = useDispatch();
+    const cartProducts = useSelector(state => state.cart.cartItems)
 
 
+    // console.log(cartProducts);
+    const totalAmount = useSelector((state) => state.cart.totalAmount)
 
 
     return (
@@ -25,16 +30,16 @@ const Cart = () => {
             </div>
 
 
-
-
-
             {/* ====== start of div cart ======= */}
             <div className="div_cart">
                 <Container>
+
                     {
-                        data === ''?
-                            <p className='no_pro'>There are no products in the cart</p>
-                            : <table>
+                        cartProducts.length === 0
+                            ? <p className='no_pro'>no item added to the cart</p>
+                            :
+
+                            <table>
                                 <thead>
                                     <tr>
                                         <th>Image</th>
@@ -44,62 +49,14 @@ const Cart = () => {
                                         <th>Delete</th>
                                     </tr>
                                 </thead>
+
+
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <Link to={`/Single_pro/`}>
-                                                <img src={require('../../assets/images/product_01.3.jpg')} alt="" />
-                                            </Link>
-                                        </td>
-                                        <td>
-                                            <Link to={`/Single_pro/`}>
-                                                <p>Chicken Burger</p>
-                                            </Link>
-                                        </td>
-                                        <td>$24</td>
-                                        <td>1x</td>
-                                        <td>
-                                            <button><RiDeleteBinLine /></button>
-                                        </td>
-                                    </tr>
-
-
-                                    <tr>
-                                        <td>
-                                            <Link to={`/Single_pro/`}>
-                                                <img src={require('../../assets/images/product_3.2.jpg')} alt="" />
-                                            </Link>
-                                        </td>
-                                        <td>
-                                            <Link to={`/Single_pro/`}>
-                                                <p>Chicken Burger</p>
-                                            </Link>
-                                        </td>
-                                        <td>$24</td>
-                                        <td>1x</td>
-                                        <td>
-                                            <button><RiDeleteBinLine /></button>
-                                        </td>
-                                    </tr>
-
-
-                                    <tr>
-                                        <td>
-                                            <Link to={`/Single_pro/`}>
-                                                <img src={require('../../assets/images/product_09.jpg')} alt="" />
-                                            </Link>
-                                        </td>
-                                        <td>
-                                            <Link to={`/Single_pro/`}>
-                                                <p>Chicken Burger</p>
-                                            </Link>
-                                        </td>
-                                        <td>$24</td>
-                                        <td>1x</td>
-                                        <td>
-                                            <button><RiDeleteBinLine /></button>
-                                        </td>
-                                    </tr>
+                                    {
+                                        cartProducts.map((item, index) => (
+                                            <CartPro item={item} key={index} />
+                                        ))
+                                    }
                                 </tbody>
                             </table>
                     }
@@ -114,7 +71,7 @@ const Cart = () => {
 
                     {/* ====== start of div total price ======= */}
                     <div className="total_price">
-                        <h5>Subtotal : $<span>150</span></h5>
+                        <h5>Subtotal : $<span> {totalAmount}</span></h5>
                         <p>Taxes and shipping will calculate at checkout</p>
                         <div className="btn_shop_and_checkout">
                             <Link to='/Foods'>

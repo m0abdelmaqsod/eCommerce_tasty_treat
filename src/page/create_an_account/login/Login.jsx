@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/create_account.css';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
@@ -9,6 +9,10 @@ import { IoMdAlert } from "react-icons/io";
 
 
 const Login = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [accept, setAccept] = useState(false);
@@ -40,10 +44,6 @@ const Login = () => {
         } catch (error) {
             console.log(error)
         }
-
-
-
-
     }
 
 

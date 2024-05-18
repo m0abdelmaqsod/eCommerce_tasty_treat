@@ -6,34 +6,40 @@ import Why_tasty_treat from '../../components/home/why_tasty_treat/Why_tasty_tre
 import Hot_pizza from '../../components/home/hot_pizza/Hot_pizza'
 import Our_services from '../../components/home/our_services/Our_services'
 import Testimonials_com from '../../components/home/testimonials_com/Testimonials_com';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProduct } from '../../store/products/apiPro';
+
 
 
 const Home = () => {
   document.title = 'Home';
-  // === set all data === //
-  const [data, setData] = useState([]);
+  // ===== set all data products ===== //
+  const dispatch = useDispatch();
+  const { products } = useSelector(state => state.pro)
+
+
+
 
   // === start get data === //
   useEffect(() => {
-    axios.get("http://localhost:8000/allProduct")
-      .then((res) => setData(res.data))
-      .catch((error) => console.error(error))
+    window.scrollTo(0, 0);
+
+    dispatch(fetchProduct());
   }, []);
 
 
+
   // === handel filter Data Hot Pizza === //
-  const handelDataHotPizza = data.filter((product) => product.category === "pizza");
+  const handelDataHotPizza = products.filter((product) => product.category === "pizza");
   // === handel slice length filter Data Hot Pizza === //
   const handelHotPizza = handelDataHotPizza.slice(0, 4);
-
 
   return (
     <>
       <section className='home'>
         <Header />
         <Our_services />
-        <Filter_popular_foods data={data} />
+        <Filter_popular_foods />
         <Why_tasty_treat />
         <Hot_pizza handelHotPizza={handelHotPizza} />
         <Testimonials_com />

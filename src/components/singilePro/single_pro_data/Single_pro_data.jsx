@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
 import './styles/single_pro_data.css'
 import { Container, Col, Row, Button } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../../../store/shopping-cart/cartSlice';
 
 
+const Single_pro_data = ({ data }) => {
 
-const Single_pro_data = (data) => {
-    const dataPro = data.data;
 
     const [handelImg, setHandelImg] = useState("");
 
+    const { id, namePro, imgUrl, imgUrl2, imgUrl3, category, price } = data;
+
+    const dispatch = useDispatch();
+
+    const addToCart = () => {
+        dispatch(cartActions.addItem({
+            id, namePro, imgUrl, price
+        }))
+    }
 
     return (
         <>
@@ -16,7 +26,7 @@ const Single_pro_data = (data) => {
 
                 <div className="banner">
                     <img src={require("../../../assets/images/banner.jpg")} alt="" />
-                    <h3><span>{dataPro.namePro}</span></h3>
+                    <h3><span>{namePro}</span></h3>
                 </div>
 
                 <Container>
@@ -27,18 +37,18 @@ const Single_pro_data = (data) => {
                                     <Row>
                                         <Col sm="12" md="12" lg="3" xl="3">
                                             <div className="img_sidebar_slider">
-                                                <img onClick={() => setHandelImg(dataPro.imgUrl)} src={dataPro.imgUrl} alt="" />
+                                                <img onClick={() => setHandelImg(imgUrl)} src={imgUrl} alt="" />
 
-                                                <img className={dataPro.imgUr2 === "" ? "img_none" : ""} onClick={() => setHandelImg(dataPro.imgUrl2)} src={dataPro.imgUrl2} alt="" />
+                                                <img className={imgUrl2 === "" ? "img_none" : ""} onClick={() => setHandelImg(imgUrl2)} src={imgUrl2} alt="" />
 
-                                                <img className={dataPro.imgUrl3 === "" ? "img_none" : ""} onClick={() => setHandelImg(dataPro.imgUrl3)} src={dataPro.imgUrl3} alt="" />
+                                                <img className={imgUrl3 === "" ? "img_none" : ""} onClick={() => setHandelImg(imgUrl3)} src={imgUrl3} alt="" />
                                             </div>
                                         </Col>
 
 
                                         <Col sm="12" md="12" lg="9" xl="9">
                                             <div className="img_slider">
-                                                <img src={handelImg === "" ? dataPro.imgUrl : handelImg} alt="" />
+                                                <img src={handelImg === "" ? imgUrl : handelImg} alt="" />
                                             </div>
                                         </Col>
                                     </Row>
@@ -48,10 +58,10 @@ const Single_pro_data = (data) => {
 
                             <Col sm="12" md="5" lg="5" xl="5">
                                 <div className="data_slider">
-                                    <h3>{dataPro.namePro}</h3>
-                                    <h5>Price: <span>${dataPro.price}</span></h5>
-                                    <p>Category: <span>{dataPro.category}</span></p>
-                                    <Button variant="danger">Add To Cart</Button>
+                                    <h3>{namePro}</h3>
+                                    <h5>Price: <span>${price}</span></h5>
+                                    <p>Category: <span>{category}</span></p>
+                                    <Button variant="danger" onClick={addToCart}>Add To Cart</Button>
                                 </div>
                             </Col>
                         </Row>

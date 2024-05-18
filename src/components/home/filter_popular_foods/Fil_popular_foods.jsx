@@ -1,24 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles/filter_popular_foods.css';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { cartActions } from '../../../store/shopping-cart/cartSlice';
+import { fetchProduct } from '../../../store/products/apiPro';
 
-const Fil_popular_foods = (data) => {
+
+const Fil_popular_foods = () => {
+
+    const dispatch = useDispatch();
+    const { products } = useSelector(state => state.pro);
+
+    useEffect(() => {
+        dispatch(fetchProduct());
+    }, [])
 
     // === set Btn Category === //
     const [btnCategory, setBtnCategory] = useState("all");
 
-    // === handel all data product === //
-    const dataCategory = data.data;
-
     // === handel Filter Category Popular Foods === //
-    const handelFilCategory = btnCategory === "all" ? dataCategory : dataCategory.filter((product) => product.category === btnCategory)
+    const handelFilCategory = btnCategory === "all" ? products : products.filter((product) => product.category === btnCategory)
+
 
 
     return (
         <>
-
-
             <div className="fil_popular_foods">
                 <h3 className='text-center'>Popular Foods</h3>
                 <Container>
@@ -69,7 +76,7 @@ const Fil_popular_foods = (data) => {
 
                                             <div className="price_btn d-flex">
                                                 <p>${product.price}</p>
-                                                <Button variant="danger">Add To Cart</Button>
+                                                <Button variant="danger" onClick={() => dispatch(cartActions.addItem(product))}>Add To Cart</Button>
                                             </div>
                                         </div>
                                     </Col>

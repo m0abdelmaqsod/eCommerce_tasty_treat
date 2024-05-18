@@ -132,8 +132,7 @@
     margin: 5vh 0 15vh;
 }
 
-.foods .pagination .btn_prev button,
-.btn_next button {
+.foods .pagination .btn_pag button {
     background-color: #212245;
     color: #fff;
     display: flex;
@@ -145,9 +144,17 @@
     transition: all 0.5s;
 }
 
-.foods .pagination .btn_prev button:hover,
-.btn_next button:hover {
+.foods .pagination .btn_pag button:hover {
     background-color: #FD2020;
+}
+
+.foods .pagination .btn_pag .disabled {
+    background-color: #2122456b;
+    cursor: no-drop;
+}
+
+.foods .pagination .btn_pag .disabled:hover {
+    background-color: #2122456b;
 }
 
 .foods .pagination .btn_num {

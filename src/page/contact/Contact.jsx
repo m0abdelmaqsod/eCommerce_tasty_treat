@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './styles/contact.css';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FiMail, FiHome, FiHeadphones } from "react-icons/fi";
@@ -6,6 +6,11 @@ import { FiMail, FiHome, FiHeadphones } from "react-icons/fi";
 
 
 const Contact = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
     return (
         <>
 
